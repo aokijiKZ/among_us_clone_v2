@@ -1,0 +1,218 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://setting_menu/img/exitHover.png" type="Texture" id=1]
+[ext_resource path="res://setting_menu/sound/test_effect.wav" type="AudioStream" id=2]
+[ext_resource path="res://setting_menu/img/exit.png" type="Texture" id=3]
+[ext_resource path="res://setting_menu/Setting_menu.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+
+[node name="setting_menu" type="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 640, 360 )
+custom_styles/panel = SubResource( 1 )
+popup_exclusive = true
+script = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Options" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 455.0
+margin_top = 159.0
+margin_right = 1464.0
+margin_bottom = 921.0
+rect_min_size = Vector2( 500, 0 )
+custom_constants/separation = 20
+
+[node name="Title" type="Label" parent="CenterContainer/Options"]
+margin_right = 1009.0
+margin_bottom = 104.0
+custom_colors/font_color = Color( 1, 0.866667, 0.615686, 1 )
+text = "ตั้งค่า"
+align = 1
+
+[node name="WindowSize" type="HBoxContainer" parent="CenterContainer/Options"]
+margin_top = 124.0
+margin_right = 1009.0
+margin_bottom = 234.0
+custom_constants/separation = 90
+
+[node name="Label" type="Label" parent="CenterContainer/Options/WindowSize"]
+margin_top = 3.0
+margin_right = 450.0
+margin_bottom = 107.0
+rect_min_size = Vector2( 150, 0 )
+text = "ขนาดหน้าต่าง"
+
+[node name="WindowSizeOptionButton" type="OptionButton" parent="CenterContainer/Options/WindowSize"]
+unique_name_in_owner = true
+margin_left = 540.0
+margin_right = 1009.0
+margin_bottom = 110.0
+focus_neighbour_top = NodePath("../../../../../../../exitButton")
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+keep_pressed_outside = true
+text = "640×360 (1:1)"
+items = [ "640×360 (1:1)", null, false, 0, null, "640×480 (4:3)", null, false, 1, null, "720×480 (3:2)", null, false, 2, null, "800×600 (4:3)", null, false, 3, null, "1152×648 (16:9)", null, false, 5, null, "1280×720 (16:9)", null, false, 6, null, "1280×800 (16:10)", null, false, 6, null, "1680×720 (21:9)", null, false, 7, null, "Custom", null, true, 8, null ]
+selected = 0
+
+[node name="WindowFullscreen" type="HBoxContainer" parent="CenterContainer/Options"]
+margin_top = 254.0
+margin_right = 1009.0
+margin_bottom = 366.0
+custom_constants/separation = 450
+
+[node name="Label" type="Label" parent="CenterContainer/Options/WindowFullscreen"]
+margin_top = 4.0
+margin_right = 221.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 150, 0 )
+text = "เต็มจอ"
+
+[node name="WindowFullscreenCheckBox" type="CheckBox" parent="CenterContainer/Options/WindowFullscreen"]
+unique_name_in_owner = true
+margin_left = 671.0
+margin_right = 1009.0
+margin_bottom = 112.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 3
+keep_pressed_outside = true
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/Options"]
+margin_top = 386.0
+margin_right = 1009.0
+margin_bottom = 390.0
+
+[node name="Music Volume" type="HBoxContainer" parent="CenterContainer/Options"]
+margin_top = 410.0
+margin_right = 1009.0
+margin_bottom = 514.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Options/Music Volume"]
+margin_right = 453.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 150, 0 )
+text = "ความดัง เพลง"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/Options/Music Volume"]
+unique_name_in_owner = true
+margin_left = 468.0
+margin_right = 885.0
+margin_bottom = 16.0
+mouse_default_cursor_shape = 10
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 100.0
+value = 100.0
+rounded = true
+
+[node name="MusicVolumeValue" type="Label" parent="CenterContainer/Options/Music Volume"]
+unique_name_in_owner = true
+margin_left = 900.0
+margin_right = 1009.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 24, 20 )
+size_flags_horizontal = 3
+text = "100"
+
+[node name="Effect Volume" type="HBoxContainer" parent="CenterContainer/Options"]
+margin_top = 534.0
+margin_right = 1009.0
+margin_bottom = 638.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Options/Effect Volume"]
+margin_right = 713.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 150, 0 )
+text = "ความดัง เสียงประกอบ"
+
+[node name="EffectVolumeSlider" type="HSlider" parent="CenterContainer/Options/Effect Volume"]
+unique_name_in_owner = true
+margin_left = 728.0
+margin_right = 885.0
+margin_bottom = 16.0
+mouse_default_cursor_shape = 10
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 100.0
+value = 100.0
+rounded = true
+
+[node name="EffectVolumeValue" type="Label" parent="CenterContainer/Options/Effect Volume"]
+unique_name_in_owner = true
+margin_left = 900.0
+margin_right = 1009.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 24, 20 )
+size_flags_horizontal = 3
+text = "100"
+
+[node name="test_effect" type="AudioStreamPlayer" parent="CenterContainer/Options/Effect Volume"]
+unique_name_in_owner = true
+stream = ExtResource( 2 )
+bus = "Effect"
+
+[node name="Dialog Volume" type="HBoxContainer" parent="CenterContainer/Options"]
+margin_top = 658.0
+margin_right = 1009.0
+margin_bottom = 762.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/Options/Dialog Volume"]
+margin_right = 555.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 150, 0 )
+text = "ความดัง เสียงพูด"
+
+[node name="DialogVolumeSlider" type="HSlider" parent="CenterContainer/Options/Dialog Volume"]
+unique_name_in_owner = true
+margin_left = 570.0
+margin_right = 885.0
+margin_bottom = 16.0
+mouse_default_cursor_shape = 10
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 100.0
+value = 100.0
+rounded = true
+
+[node name="DialogVolumeValue" type="Label" parent="CenterContainer/Options/Dialog Volume"]
+unique_name_in_owner = true
+margin_left = 900.0
+margin_right = 1009.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 24, 20 )
+size_flags_horizontal = 3
+text = "100"
+
+[node name="test_dialog" type="AudioStreamPlayer" parent="CenterContainer/Options/Dialog Volume"]
+unique_name_in_owner = true
+stream = ExtResource( 2 )
+bus = "Dialog"
+
+[node name="exitButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -203.0
+margin_top = 82.0
+margin_right = -103.0
+margin_bottom = 182.0
+rect_min_size = Vector2( 100, 100 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 3 )
+texture_focused = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[connection signal="item_selected" from="CenterContainer/Options/WindowSize/WindowSizeOptionButton" to="." method="_on_window_base_size_item_selected"]
+[connection signal="toggled" from="CenterContainer/Options/WindowFullscreen/WindowFullscreenCheckBox" to="." method="_on_checkBox_toggled"]
+[connection signal="value_changed" from="CenterContainer/Options/Music Volume/MusicVolumeSlider" to="." method="_on_HSlider_music_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Options/Effect Volume/EffectVolumeSlider" to="." method="_on_HSlider_efftect_value_changed"]
+[connection signal="value_changed" from="CenterContainer/Options/Dialog Volume/DialogVolumeSlider" to="." method="_on_HSlider_dialog_value_changed"]
+[connection signal="pressed" from="exitButton" to="." method="_on_exitButton_pressed"]

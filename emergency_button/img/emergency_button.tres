@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=2]
+
+[ext_resource path="res://emergency_button/img/1_Generic_Shadowless_48x48.png" type="Texture" id=1]
+
+[resource]
+flags = 1
+atlas = ExtResource( 1 )
+region = Rect2( 576, 1968, 96, 96 )

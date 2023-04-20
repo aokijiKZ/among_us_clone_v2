@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://host_menu/host_menu.gd" type="Script" id=1]
+
+[node name="host_menu" type="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="name_line_edit" type="LineEdit" parent="."]
+unique_name_in_owner = true
+margin_left = 700.0
+margin_top = 325.0
+margin_right = 1130.0
+margin_bottom = 439.0
+
+[node name="label" type="Label" parent="name_line_edit"]
+margin_left = -162.0
+margin_right = -30.0
+margin_bottom = 104.0
+text = "ชื่อ"
+
+[node name="host_button" type="Button" parent="."]
+margin_left = 690.0
+margin_top = 726.0
+margin_right = 1120.0
+margin_bottom = 836.0
+text = "สร้าง"
+
+[connection signal="pressed" from="host_button" to="." method="_on_host_button_pressed"]
